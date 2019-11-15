@@ -1,0 +1,2 @@
+# VGA_tarm4_testGame1
+VGAの4タームの審査会用作品のリポジトリ
