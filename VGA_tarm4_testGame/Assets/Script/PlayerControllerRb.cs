@@ -23,7 +23,7 @@ public class PlayerControllerRb : MonoBehaviour
     void Start()
     {
         m_rb = GetComponent<Rigidbody>();
-        //m_anim = GetComponent<Animator>();
+        m_anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -46,7 +46,7 @@ public class PlayerControllerRb : MonoBehaviour
                 m_rb.velocity = this.transform.forward * m_movingSpeed;
             }
         }
-        /*
+        
         // Animator Controller のパラメータをセットする
         m_anim.SetFloat("Speed", m_rb.velocity.magnitude);
 
@@ -55,9 +55,13 @@ public class PlayerControllerRb : MonoBehaviour
         {
             m_rb.AddForce(Vector3.up * m_jumpPower, ForceMode.Impulse);
             // Animator Controller のパラメータをセットする
-            m_anim.SetTrigger("Jump");
+            m_anim.SetBool("Jump", true);
         }
-        */
+        else if (!IsGrounded())
+        {
+            m_anim.SetBool("Jump", false);
+        }
+        
     }
 
     /// <summary>
