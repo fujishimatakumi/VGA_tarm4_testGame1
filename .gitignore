@@ -27,6 +27,10 @@ ExportedObj/
 # Unity3D generated meta files
 *.pidb.meta
 *.pdb.meta
+VGA_tarm4_testGame/Assets/Kevin Iglesias.meta
+VGA_tarm4_testGame/Assets/Kevin Iglesias/
+VGA_tarm4_testGame/Assets/UnityChan.meta
+VGA_tarm4_testGame/Assets/UnityChan/
 
 # Unity3D Generated File On Crash Reports
 sysinfo.txt
