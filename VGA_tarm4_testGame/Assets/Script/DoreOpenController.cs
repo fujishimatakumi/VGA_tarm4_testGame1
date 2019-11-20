@@ -30,7 +30,8 @@ public class DoreOpenController : MonoBehaviour
         {
             if (m_nowPosition.y > m_downDistans)
             {
-                ga.gameObject.transform.Translate(0f, m_openSpead, 0f);
+                ga.gameObject.transform.Translate(0f,-m_openSpead, 0f);
+                m_downDistans += m_openSpead;
             }
             
         }
