@@ -1941,7 +1941,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_judgment: 0
-  m_openSpead: -0.1
+  m_openSpead: 0.1
 --- !u!1 &1646006410
 GameObject:
   m_ObjectHideFlags: 0
