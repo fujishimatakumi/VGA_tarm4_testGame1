@@ -33,8 +33,10 @@ public class DoreOpenController : MonoBehaviour
                 ga.gameObject.transform.Translate(0f,-m_openSpead, 0f);
                 m_downDistans += m_openSpead;
             }
-            
+            else
+            {
+                m_judgment = false;
+            }
         }
-       
     }
 }
