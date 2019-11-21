@@ -17,6 +17,7 @@ public class PlayerControllerRb : MonoBehaviour
     [SerializeField] float m_jumpPower = 5f;
     /// <summary>接地判定の際、足元からどれくらいの距離を「接地している」と判定するかの長さ</summary>
     [SerializeField] float m_isGroundedLength = 0.2f;
+    [SerializeField] GameObject m_hokeCoraider;
     Rigidbody m_rb;
     Animator m_anim;
 
@@ -61,6 +62,12 @@ public class PlayerControllerRb : MonoBehaviour
         {
             m_anim.SetBool("Jump", false);
         }
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+            m_anim.SetTrigger("Hoke");
+        }
+        
         
     }
 
@@ -78,7 +85,19 @@ public class PlayerControllerRb : MonoBehaviour
         bool isGrounded = Physics.Linecast(start, end); // 引いたラインに何かがぶつかっていたら true とする
         return isGrounded;
     }
+
+    public void atackBigin()
+    {
+        if (m_hokeCoraider)
+        {
+            m_hokeCoraider.SetActive(true);
+        }
+    }
+
+    
+
 }
+
 
 public enum MovingType
 {
