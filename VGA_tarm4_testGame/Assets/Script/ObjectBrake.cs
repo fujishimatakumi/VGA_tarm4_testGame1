@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ObjectBrake : MonoBehaviour
 {
+    [SerializeField] bool m_kyeObje = false;
     GameObject go;
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,7 @@ public class ObjectBrake : MonoBehaviour
     {
         if (other.gameObject.tag == "Atack")
         {
+            DoreOpenController.JudgFunc(m_kyeObje);
             Destroy(go);
         }
     }
