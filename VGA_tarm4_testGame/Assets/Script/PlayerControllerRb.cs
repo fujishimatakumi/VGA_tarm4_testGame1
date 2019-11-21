@@ -94,7 +94,13 @@ public class PlayerControllerRb : MonoBehaviour
         }
     }
 
-    
+    public void EndAtack()
+    {
+        if (m_hokeCoraider.activeSelf == true)
+        {
+            m_hokeCoraider.SetActive(false);
+        }
+    }
 
 }
 
