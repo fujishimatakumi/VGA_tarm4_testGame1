@@ -48,7 +48,7 @@ public class DoreOpenController : MonoBehaviour
         }
         else
         {
-            m_judgment = false;
+            GameManager.RelodeScene();
         }
     }
 }
