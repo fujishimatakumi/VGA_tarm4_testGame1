@@ -8,7 +8,7 @@ public class DoreOpenController : MonoBehaviour
     float m_width;
     //float m_positionX;
     float m_positionY;
-    [SerializeField] bool m_judgment = false;
+    [SerializeField] static bool m_judgment = false;
     [SerializeField] float m_openSpead = 0.1f;
     GameObject ga;
     float m_downDistans;
@@ -37,6 +37,18 @@ public class DoreOpenController : MonoBehaviour
             {
                 m_judgment = false;
             }
+        }
+    }
+
+    public static void JudgFunc(bool judg)
+    {
+        if (judg)
+        {
+            m_judgment = true;
+        }
+        else
+        {
+            m_judgment = false;
         }
     }
 }
