@@ -9,12 +9,14 @@ public class ObjectBrake : MonoBehaviour
     [SerializeField] AudioClip m_keySEClip;
     [SerializeField] AudioClip m_brakeSEClip;
     AudioSource m_Audio;
+    GameObject m_child;
     //GameObject go;
     // Start is called before the first frame update
     void Start()
     {   
         m_Audio = gameObject.GetComponent<AudioSource>();
         m_Audio.clip = m_keySEClip;
+        m_child = transform.GetChild(0).gameObject;
     }
 
     // Update is called once per frame
