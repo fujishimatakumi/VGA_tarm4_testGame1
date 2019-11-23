@@ -1,15 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class ObjectBrake : MonoBehaviour
 {
     [SerializeField] bool m_kyeObje = false;
-    GameObject go;
+    [SerializeField] AudioClip m_keySEClip;
+    [SerializeField] AudioClip m_brakeSEClip;
+    AudioSource m_Audio;
+    //GameObject go;
     // Start is called before the first frame update
     void Start()
-    {
-        go = this.gameObject;
+    {   
+        m_Audio = gameObject.GetComponent<AudioSource>();
+        m_Audio.clip = m_keySEClip;
     }
 
     // Update is called once per frame
@@ -22,17 +27,21 @@ public class ObjectBrake : MonoBehaviour
     {
         if (other.gameObject.tag == "Atack")
         {
+            AudioSource.PlayClipAtPoint(m_brakeSEClip,transform.position);
             DoreOpenController.JudgFunc(m_kyeObje);
-            Destroy(go);
+            Destroy(this.gameObject);
         }
     }
 
-   /* private void OnCollisionEnter(Collision collision)
+    private void OnTriggerStay(Collider other)
     {
-        if (collision.gameObject.tag == "Atack")
+        if (other.gameObject.tag == "Player")
         {
-            Destroy(go);
+            if (Input.GetKeyDown("f"))
+            {
+                m_Audio.Play();
+            }
         }
     }
-    */
+   
 }
